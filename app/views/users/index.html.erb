@@ -10,6 +10,9 @@
       <p class="center">
         <% if !@current_user %>
           <a href="/users/signup" class="btn btn-primary">Sign Up/Sign In</a>
+          <% @users.each do |u| %>
+            <a href="<%= "/users/#{u.id}" %>" class="btn btn-primary">Go to <%= u.username %>'s dashboard</a>
+          <% end %>
         <% end %>
         <% if @current_user %>
           <a href="<%= "/users/2" %>" class="btn btn-primary">Go to Dashboard</a>

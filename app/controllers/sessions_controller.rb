@@ -7,12 +7,9 @@ class SessionsController < ApplicationController
 
   def sign_in
     @user = User.find_by(email: params[:user][:email])
-    p @user
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       @current_user = session[:user_id]
-      p session[:user_id]
-      p @current_user
       flash[:notice] = 'Hi Again!'
       redirect_to dashboard_path(@current_user)
     else
