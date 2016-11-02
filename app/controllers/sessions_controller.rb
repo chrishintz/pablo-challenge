@@ -7,12 +7,16 @@ class SessionsController < ApplicationController
 
   def sign_in
     @user = User.find_by(email: params[:user][:email])
+    p @user
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to home_path
-    else
-      flash[:notice] = 'Signed in successfully'
+      p session[:user_id]
+      p @current_user
+      flash[:notice] = 'Hi Again!'
       redirect_to root_path
+    else
+      flash[:notice] = 'Please try again'
+      render('users/new')
     end
   end
 

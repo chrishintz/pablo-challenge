@@ -8,7 +8,12 @@
         time someone tells you to "Read a Book!", point them to Book Shelf!
       </p>
       <p class="center">
-        <a href="/users/signup" class="btn btn-primary">Sign Up/Sign In</a>
+        <% if !@current_user %>
+          <a href="/users/signup" class="btn btn-primary">Sign Up/Sign In</a>
+        <% end %>
+        <% if @current_user %>
+          <a href="" class="btn btn-primary">Go to Dashboard</a>
+        <% end %>
       </p>
     </div>
   </div>
