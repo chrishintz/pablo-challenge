@@ -1,2 +1,32 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="col-sm-9 offset-sm 3 col-md-10 offset-md-2 main">
+  <h1><%= @user.first_name %>'s Dashboard</h1>
+  <div class="row placeholders">
+      <h2>Book Self</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Genre</th>
+              <th>Rating</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user.books.each do |b| %>
+              <tr>
+                <th>b.id</th>
+                <th>b.title</th>
+                <th>b.author</th>
+                <th>b.genre</th>
+                <th>b.star_rating</th>
+                <th>b.notes</th>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
