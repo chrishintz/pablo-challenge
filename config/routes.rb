@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   get  '/',                to: 'users#index'
 
   post 'users',           to: 'users#create'
-  get 'users/:id/edit',   to: 'users#edit'
   patch 'users/:id',      to: 'users#update'
-  get 'users/:id/delete', to: 'users#delete'
   delete 'users/:id',     to: 'users#destroy'
 
   resources :books do
