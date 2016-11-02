@@ -8,14 +8,14 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Page.new
+    @book = Book.new
   end
 
   def create
     @book = Book.new(book_params)
     if @book.save
       flash[:notice] = "Page created successfully"
-      redirect_to(books_path)
+      redirect_to(dashboard_path(@book.user_id))
     else
       render('new')
     end

@@ -17,12 +17,12 @@
           <tbody>
             <% @user.books.each do |b| %>
               <tr>
-                <th>b.id</th>
-                <th>b.title</th>
-                <th>b.author</th>
-                <th>b.genre</th>
-                <th>b.star_rating</th>
-                <th>b.notes</th>
+                <th><%= b.id %></th>
+                <th><%= b.title %></th>
+                <th><%= b.author %></th>
+                <th><%= b.genre %></th>
+                <th><%= b.star_rating %></th>
+                <th><%= b.notes %></th>
               </tr>
             <% end %>
           </tbody>

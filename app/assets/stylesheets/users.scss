@@ -39,6 +39,7 @@ $br: 4px;
 
 .card > img {
   margin-bottom: .75rem;
+  width: 100%;
 }
 
 .card-text {
@@ -120,7 +121,6 @@ label {
   position:absolute;
   transform:translateY(6px);
   left:13px;
-  color:rgba($white,.5);
   transition:all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
